@@ -9,7 +9,7 @@ Some experimenting with Drone, using `.drone.yml` to build assets.
 # Howto
 
 Create a Droplet at DigitalOcean.
-I used a Dcoerk "one-click app" and named it drone-ci.  
+I used a Docker "one-click app" and named it drone-ci.  
 Specs: 512 MB Memory / 20 GB Disk / AMS2 - Ubuntu Docker 17.03.0-ce on 14.04
 
 > Docker has been preinstalled and configured per Docker's Recommendations.

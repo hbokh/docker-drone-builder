@@ -7,3 +7,17 @@ pipeline:
       - NAME="fortune-whale"
       - docker build --rm=true -t "$NAME" "$DRONE_BUILD_DIR"
       - docker run fortune-whale
+
+  publish:
+    docker:
+      username: $$DOCKER_USERNAME
+      password: $$DOCKER_PASSWORD
+      email: $$DOCKER_EMAIL
+      repo: hbokh/docker-drone-builder
+      tag:
+        - development
+        - "$$BUILD_NUMBER"
+      file: Dockerfile
+      insecure: false
+      when:
+        branch: develop
