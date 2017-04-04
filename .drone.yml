@@ -7,20 +7,15 @@ pipeline:
       - NAME="hbokh/fortune-whale"
       - docker build --rm=true -t "$NAME" "$DRONE_BUILD_DIR"
       - docker run hbokh/fortune-whale
-
   publish:
-    image: plugins/docker
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - DOCKER_LAUNCH_DEBUG=true
-    username: $$DOCKER_USERNAME
-    password: $$DOCKER_PASSWORD
-    email: $$DOCKER_EMAIL
-    repo: hbokh/fortune-whale
-    tag: latest
-    file: Dockerfile
-    insecure: false
-    debug: true
-    when:
-      branch: master
+    docker:
+      environment:
+        - DOCKER_LAUNCH_DEBUG=true
+      username: $$DOCKER_USERNAME
+      password: $$DOCKER_PASSWORD
+      email: $$DOCKER_EMAIL
+      repo: hbokh/fortune-whale
+      tag: latest
+      insecure: false
+      when:
+        branch: master
