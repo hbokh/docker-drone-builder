@@ -22,3 +22,15 @@ pipeline:
     insecure: false
     when:
       branch: master
+
+  notify:
+    image: drillster/drone-email
+    from: drone@h43dus.org
+    subject: >
+      [{{ build.status }}]
+      {{ repo.owner }}/{{ repo.name }}
+    template: >
+      https://git.io/vgvPz
+    when:
+      status: [ success, changed, failure ]
+      
