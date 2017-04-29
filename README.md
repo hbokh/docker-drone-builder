@@ -93,7 +93,7 @@ Remote: https://github.com/hbokh/docker-drone-builder.git
 ```
 
 ```
-$ drone secret ls hbokh/docker-drone-builder
+$ drone global secret ls
 
 DOCKER_USERNAME
 Events: push, tag, deployment

@@ -25,6 +25,9 @@ pipeline:
 
   notify:
     image: drillster/drone-email
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
+    host: smtp.mailgun.org
     from: drone@h43dus.org
     subject: >
       [{{ build.status }}]
