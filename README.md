@@ -6,7 +6,7 @@ Some experimenting with Drone, using `.drone.yml` to build assets.
 
 ---
 
-# Howto
+## Howto
 
 Create a Droplet at DigitalOcean.
 I used a Docker "one-click app" and named it drone-ci.  
